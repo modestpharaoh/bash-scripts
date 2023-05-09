@@ -4,6 +4,7 @@
 # Run every 60 Sec
 # useful on low performace laptop, when you open many tabs.
 
+# infinit loop
 while true; do
   overloaded=$(free -m | awk 'NR==2{if ($3*100/$2 > 85) printf "1"; else printf "0";}')
   used_mem=$(free -m | awk 'NR==2{printf "%.2f%%\n", $3*100/$2 }')
